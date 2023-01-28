@@ -21,8 +21,22 @@ app.get("/", (req, res) => {
     homeStartingContent: homeStartingContent,
   })
 })
-
-
+app.get("/about", (req, res) => {
+  res.render('about', {
+    aboutContent: aboutContent,
+  })
+})
+app.get("/contact", (req, res) => {
+  res.render('contact', {
+    contactContent: contactContent,
+  })
+})
+app.get("/compose", (req, res) => {
+  res.render('compose')
+  // {
+  //   contactContent: contactContent,
+  // })
+})
 
 
 
