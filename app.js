@@ -15,14 +15,16 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const item = []
+const posts = []
 
 
 app.get("/", (req, res) => {
   res.render('home', {
     homeStartingContent: homeStartingContent,
+    posts: posts
   })
 })
+
 app.get("/about", (req, res) => {
   res.render('about', {
     aboutContent: aboutContent,
@@ -43,8 +45,7 @@ app.post("/compose", (req, res) => {
     body: req.body.postBody
   }
 
-  item.push(post)
-  console.log(post)
+  posts.push(post)
   res.redirect('/')
   // res.render("compose")
 })
