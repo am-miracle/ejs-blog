@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
     } else{
       res.render('home', {
         homeStartingContent: homeStartingContent,
-        posts: posts
+        posts: post
       })
     }
   })
